@@ -201,7 +201,7 @@ class CategoryController extends AbstractActionController
 
         return new ViewModel(array(
             'category' => $category,
-            'posts'    => $this->postRepository->findByCategoryPaginated($category, $page),
+            'posts'    => $this->postRepository->findByCategoryPaginated($category, $page, $this->options->getPostsPerPage()),
         ));
     }
 
